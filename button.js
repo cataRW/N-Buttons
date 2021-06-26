@@ -1,10 +1,12 @@
+let randomNumber;
+
 function randomNumb(number) {
   return Math.floor((Math.random() * number) + 1);
 }
 
 function numberCheck() {
   const inputBox = document.getElementById('inputBox');
-  let randomNumber = randomNumb(inputBox.value);
+  randomNumber = randomNumb(inputBox.value);
 
   if (isNaN(inputBox.value)) {
     document.querySelector('.status').textContent = "!!!You must insert a number!!!";
@@ -20,7 +22,7 @@ function numberCheck() {
 
 
 function choiceCheck(theChoosenButton) {
-  if (theChoosenButton === randomNumb) {
+  if (theChoosenButton == randomNumber) {
     document.querySelector('.status').textContent = "!!!CONGRATS, you win amigo!!!";
     document.querySelector('.status').style.backgroundColor = "green";
   } else {
